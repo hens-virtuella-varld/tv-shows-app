@@ -13,11 +13,12 @@ function Show(props) {
   )
 }
 
+
 function App() {
   return (
     <div className="App">
       <h1>The Best TV Shows App</h1>
-      { showsData.map(item => <Show showObject={item} ></Show> ) }
+      { showsData.map(x => <Show showObject={x} />) }
     </div>
   );
 }
