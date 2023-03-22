@@ -1,10 +1,12 @@
 import './App.css';
 
-import Header from './components/Header';
+import Header from './components/Header'
 import Home from './pages/Home'
 import Favorites from './pages/Favorites'
-import Upcoming from './pages/Upcoming';
-import NotFound from './pages/NotFound';
+import Upcoming from './pages/Upcoming'
+import NotFound from './pages/NotFound'
+import ShowPage from './pages/ShowPage'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
           <Route path="/home" element={<Home />}/> 
           <Route path="/favorites" element={<Favorites/>}/>
           <Route path="/upcoming" element={<Upcoming/>}/>
+          <Route path="/show/:showID" element={<ShowPage/>} />
           <Route path="*" element={<NotFound/>}/>
         </Routes>
 
