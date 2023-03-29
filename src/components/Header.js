@@ -5,7 +5,7 @@ function Header() {
     <div className="Header">
       <div className="Logo"></div>
       
-      <ul className="Navigation">
+      <ul className="Navigation" id="Menu">
         <li>
           <Link to="/">Home</Link>
         </li>
