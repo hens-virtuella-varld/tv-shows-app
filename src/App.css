@@ -28,6 +28,11 @@
   align-items:center;
 }
 
+ul {
+  list-style: none;
+}
+
+
 .Navigation a {
   color: white;
   font-weight: bold;
