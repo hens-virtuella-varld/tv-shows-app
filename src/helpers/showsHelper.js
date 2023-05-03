@@ -1,15 +1,23 @@
-import showsData from "../shows-data"
+import showsData from "../shows-data";
+
+const defaultImg = { medium: "https://via.placeholder.com/210x295?text=:(" };
+
+function transformShow(show) {
+	const transformedShow = { ...show, image: show.image || defaultImg };
+	return transformedShow;
+}
 
 export function getShowByID(id) {
-  return showsData.find( show => show.id.toString() === id)
+	return showsData.find((show) => show.id.toString() === id);
 }
 
 export function getHomeShows() {
-  return showsData
+	return showsData;
 }
 
-export function searchForShow (text) {
-  return showsData.filter(
-    show => show.name.toLowerCase().includes(text.toLowerCase())
-    )
+export async function searchForShow(text) {
+	const response = await fetch(`http://api.tvmaze.com/search/shows?q=${text}`);
+	const jsonData = await response.json();
+	const showResults = jsonData.map((el) => transformShow(el.show));
+	return showResults;
 }
