@@ -10,6 +10,7 @@ function ShowPage() {
 	useEffect(() => {
 		const fetchShow = async () => {
 			const showData = await getShowByID(showID);
+			console.log(showData);
 			setShow(showData);
 		};
 		fetchShow();
@@ -26,6 +27,10 @@ function ShowPage() {
 					<h2>Language: {show.language}</h2>
 					<h3>Rating: {show.rating.average}</h3>
 					<h3>Genres: {show.genres.join(", ")}</h3>
+					{!!show._embedded.cast &&
+						show._embedded.cast.map((member) => (
+							<div>{member.person.name + " as " + member.character.name}</div>
+						))}
 				</div>
 			) : (
 				<NotFound />
