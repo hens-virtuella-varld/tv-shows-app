@@ -1,67 +1,70 @@
 .App {
-  width: 100%;
+	width: 100%;
 }
 
 .Header {
-  display: flex;
-  justify-content: space-between;
-  background-color: tomato;
-  padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	background-color: tomato;
+	padding: 10px;
 }
 
 input {
-  font-size: 24px;
+	font-size: 24px;
 }
 
 .Logo {
-  width: 100px;
-  height: 50px;
-  background-color: aquamarine;
+	width: 100px;
+	height: 50px;
+	background-color: aquamarine;
 }
 
 .Search {
-  width: 150px;
-  height: 50px;
-  background-color: white;
-  border-radius: 20px;
+	width: 150px;
+	height: 50px;
+	background-color: white;
+	border-radius: 20px;
 }
 
 .Navigation {
-  display: flex;
-  gap: 30px;
-  align-items:center;
+	display: flex;
+	gap: 30px;
+	align-items: center;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
-
 
 .Navigation a {
-  color: white;
-  font-weight: bold;
+	color: white;
+	font-weight: bold;
 }
 
-
 .Show {
-  display: block;
-  width: 200px;
-  border: 2px solid black;
-  margin: 10px;
-  border-radius: 15px;
-  overflow: hidden;
+	display: block;
+	width: 200px;
+	border: 2px solid black;
+	margin: 10px;
+	border-radius: 15px;
+	overflow: hidden;
 }
 
 .Show h2 {
-  text-align: center;
+	text-align: center;
 }
 
 .Show-image {
-  width: 100%;
+	width: 100%;
 }
 
 .ShowList {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 }
 
+.ShowPage {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}

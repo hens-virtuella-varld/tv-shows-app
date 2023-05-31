@@ -18,24 +18,29 @@ function ShowPage() {
 
 	if (!show) return <NotFound />;
 
+	const addFavorite = () => {
+		const existingFavorites = JSON.parse(
+			localStorage.getItem("favorites") || "[]"
+		);
+
+		const favorites = JSON.stringify([showID, ...existingFavorites]);
+		localStorage.setItem("favorites", favorites);
+	};
+
 	return (
-		<>
-			{!!show ? (
-				<div className="ShowPage">
-					<h1>{show.name}</h1>
-					<img src={show.image.medium} />
-					<h2>Language: {show.language}</h2>
-					<h3>Rating: {show.rating.average}</h3>
-					<h3>Genres: {show.genres.join(", ")}</h3>
-					{!!show._embedded.cast &&
-						show._embedded.cast.map((member) => (
-							<div>{member.person.name + " as " + member.character.name}</div>
-						))}
-				</div>
-			) : (
-				<NotFound />
-			)}
-		</>
+		<div className="ShowPage">
+			<h1>{show.name}</h1>
+			<img src={show.image.medium} />
+			<h2>Language: {show.language}</h2>
+			<h3>Rating: {show.rating.average}</h3>
+			<h3>Genres: {show.genres.join(", ")}</h3>
+			{!!show._embedded.cast &&
+				show._embedded.cast.map((member) => (
+					<div>{member.person.name + " as " + member.character.name}</div>
+				))}
+
+			<button onClick={addFavorite}>Add to favorites</button>
+		</div>
 	);
 }
 export default ShowPage;
